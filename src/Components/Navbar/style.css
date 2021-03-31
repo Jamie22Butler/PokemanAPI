@@ -1,0 +1,60 @@
+.Navbar {
+    padding: 20px;
+    background: #55A3AB;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 240px;
+}
+
+.Navbar img{
+    size: 75%;
+    margin-right: auto;
+}
+.Navrbar .links {
+    margin-left: auto;
+}
+.Navbar a{
+    margin-left: 20px;
+    padding: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    align-items: left;
+    float: right;
+    font-size: 25px;
+}
+.Navbar a:hover{
+    color: #DF807E
+}
+.Navbar .links li{
+    list-style-type: none;
+    float: right;
+}
+.Navbar .input input{
+    border: none;
+    background: transparent;
+    margin-left: 3rem;
+    width: calc(100% - 3rem);
+    outline: none;
+    font-family: inherit
+}
+.Navbar .search{
+    margin-top: -1px;
+    align-items: center;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.Navbar .searchBar {
+    margin-top: -5px;
+}
+.Navbar .searchIcon {
+    margin-top: 16px;
+}

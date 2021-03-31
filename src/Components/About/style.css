@@ -1,0 +1,33 @@
+.aboutContainer {
+    background: white;
+    border-radius: 10px;
+    height: auto;
+}
+.aboutContainer h2{
+    padding-left: 20px;
+}
+.aboutContainer p{
+    padding-left:50px;
+    font-size: larger;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+.aboutContainer li{
+    padding-left:50px;
+    font-size:medium;
+    margin-left: 4em;
+    margin-right: 2em;
+}
+.AboutPage{
+
+    width: 65%;        
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+    padding: 50px;
+    height: 74vh;
+}
+.title{
+    font-weight: 600;
+}
