@@ -9,6 +9,7 @@ const About = () => {
             <div className="aboutContainer">
                 <h2>About</h2>
                 <p>A PokeDex project</p>
+                <br/>
                 <p className = 'title'>Next steps</p>
                 <li>Search bar</li>
                 <li>Pagination</li>

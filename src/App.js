@@ -12,14 +12,22 @@ import PokemonDetails from './Components/PokemonInfo/index'
 
 function App() {
   const [pokemonData, setPokemonData] = useState ([]);
+  const [filteredPokemon, setFilteredPokemon] = useState([])
   const [nextUrl, setNextUrl] = useState('');
   const [prevUrl, setPrevUrl] = useState('');
   const [loading, setLoading] = useState(true);
   const initialUrl = 'https://pokeapi.co/api/v2/pokemon/'
 
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pokemonPerPage, setPokemonPerPage] = useState(20);
    
- 
+  const lastPokemonIndex = currentPage * pokemonPerPage;
+  const firstPokemonIndex = lastPokemonIndex - pokemonPerPage;
+  const currentPokemon = filteredPokemon.slice(firstPokemonIndex, lastPokemonIndex)
+
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value)
+  } 
 
   useEffect(() => {
     async function fetchData() {
@@ -74,6 +82,12 @@ function App() {
                   <div className = 'btn'>
                     <button onClick={previousBtn}>Prev</button>
                     <button onClick={nextBtn}>Next</button>
+                    {/* <pagePagination 
+                      pokemonPerPage={pokemonPerPage}
+                      totalPokemon={filteredPokemon.length}
+                      handlePageChange={handlePageChange}
+                      currentPage={currentPage}
+                    /> */}
                   </div>
                     <div className = 'grid-container'>
                       {pokemonData.map((pokemon, i ) => {

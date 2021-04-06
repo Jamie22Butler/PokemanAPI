@@ -4,6 +4,7 @@ import pokemonType from '../../ColourTypes/ColorTypes'
 import { useParams } from 'react-router';
 import axios from 'axios'
 import image from '../../Images/Pikachu.gif'
+import BarChart from '../../Components/Charts/BarCharts'
 
 
 const PokemonDetails = () => {
@@ -12,7 +13,6 @@ const PokemonDetails = () => {
     const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const [loading, setLoading] = useState(true);
 
-    
     useEffect(() => {
         pokemonGet();
         // eslint-disable-next-line
@@ -22,6 +22,7 @@ const PokemonDetails = () => {
     axios
         .get(pokemonURL)
         .then(response => {
+            console.log(response.data)
             setPokemonDetails(response.data)
             setLoading(false)
         })
@@ -65,14 +66,17 @@ const PokemonDetails = () => {
                             <p> {pokemonDetails.height} </p>
                         </div>
                             <div className="Details__data Details__data--ability">
-                            <p className = 'title'>Ability</p>
-                            <p> {pokemonDetails.abilities[0].ability.name} </p>
-                        </div>
-                        <div className="Details__data Details__data--species">
-                            <p className = 'title'>Pokemon Species</p>
-                            <p> {pokemonDetails.species.name} </p>
+                            <p className = 'title'>Abilities</p>
+                             {pokemonDetails.abilities.map((ability) => {
+                                return (
+                                    <div className = 'abilityName'>
+                                        <p>{ability.ability.name}</p>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
+                    <BarChart pokemonDetails ={pokemonDetails}/>
                 </div>
             </div>
             )}
