@@ -1,12 +1,11 @@
 import React, { useState } from 'react' 
 import {HorizontalBar} from 'react-chartjs-2'
-import image from '../../Images/Pikachu.gif'
 import  './styles.css'
 
 const BarChart = ({ pokemonDetails }) => {
     const [ populateChart ] = useState({
         labels: ['HP', 'Attack', 'Defence', 'Special Attack', 'Special Defence', 'Speed'],
-        values: [
+        datasets: [
             {
                 data: [
                     pokemonDetails.stats[0].base_stat,
@@ -17,12 +16,12 @@ const BarChart = ({ pokemonDetails }) => {
                     pokemonDetails.stats[5].base_stat
                 ],
                 backgroundColor: [
-                    'rgb(25,200,80)',
-                    'rgb(248,208,48)',
-                    'rgb(240,128,48)',
-                    'rgb(104,144,240)',
-                    'rgb(160,64,160)',
-                    'rgb(238,153,172)'
+                    '#78c850',
+                    '#F8D030',
+                    '#F08030',
+                    '#6890F0',
+                    '#A040A0',
+                    '#EE99AC'
                 ]
             }
         ]
