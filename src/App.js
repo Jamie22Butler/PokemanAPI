@@ -43,7 +43,7 @@ function App() {
   }, []);
 
 
-  const nextBtn = async () => {
+   const nextBtn = async () => {
     setLoading(true);
     let data = await getAllPokemon(nextUrl);
     await loadingPokemon(data.results);
@@ -83,8 +83,8 @@ function App() {
               <Route exact path = '/'>
                 <div className = 'banner-area'>
                   <div className = 'btn'>
-                    <button onClick={previousBtn}>Prev</button>
-                    <button onClick={nextBtn}>Next</button>
+                    <button onClick={previousBtn} data-testid ="prevButtonTest">Prev</button>
+                    <button onClick={nextBtn} data-testid ="nextButtonTest">Next</button>
                   </div>
                     <div className = 'grid-container'>
                       {pokemonData.map((pokemon, i ) => {

@@ -22,7 +22,6 @@ const PokemonDetails = () => {
     axios
         .get(pokemonURL)
         .then(response => {
-            console.log(response.data)
             setPokemonDetails(response.data)
             setLoading(false)
         })

@@ -18,6 +18,7 @@ p {
     width: auto;
     display: block;
     size: larger;
+    transform: scale(1);
 }
 
 .Details__types {
